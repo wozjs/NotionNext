@@ -78,18 +78,29 @@ const Header = props => {
       }}
     >
       <div className="absolute flex flex-col h-full items-center justify-center w-full font-sans">
-        <div className='text-4xl md:text-5xl text-white shadow-text'>{siteInfo?.title}</div>
+        {/* <div className='text-4xl md:text-5xl text-white shadow-text'>{siteInfo?.title}</div>
         <div className='mt-2 h-12 items-center text-center shadow-text text-white text-lg'>
           <span id='typed'/>
-        </div>
+        </div> */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={siteInfo?.icon}
+          className="rounded-full transform hover:rotate-180"
+          width={120}
+          style={{
+            boxShadow: 'inset 0 0 10px #000',
+            padding: '5px',
+            transition: 'all ease 1s'
+          }}
+        />
       </div>
       <div
         onClick={() => {
           window.scrollTo({ top: wrapperTop, behavior: 'smooth' })
         }}
-        className="cursor-pointer w-full text-center py-4 text-3xl absolute bottom-10 text-white"
+        className="cursor-pointer w-full text-center py-4 text-3xl absolute bottom-0 text-white"
       >
-        <i className='animate-bounce fas fa-angle-down'/>
+        <i className='animate-bounce fas fa-angle-down' style={{ animationDuration: '2s' }}/>
       </div>
     </header>
   )
