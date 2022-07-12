@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import Typed from 'typed.js'
+import BLOG from '@/blog.config'
 import CONFIG_HEXO from '../config_hexo'
+import SocialButton from './SocialButton'
 
 let wrapperTop = 0
 let windowTop = 0
@@ -93,6 +95,20 @@ const Header = props => {
             transition: 'all ease 1s'
           }}
         />
+        <div
+          className="text-white rounded-xl"
+          style={{
+            width: '36%',
+            maxWidth: '500px',
+            marginTop: '20px',
+            background: 'rgba(0,0,0,.5)',
+            padding: '17px'
+          }}
+        >
+          <h1 className='text-center text-2xl font-bold'>{BLOG.AUTHOR}</h1>
+          <p className='text-center text-lg mt-4 font-light'>{BLOG.BIO}</p>
+        </div>
+        <SocialButton />
       </div>
       <div
         onClick={() => {
